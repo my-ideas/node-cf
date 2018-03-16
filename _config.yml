@@ -17,8 +17,8 @@ title: CFTPL
 email: it@my-ideas.it
 description: >- # this means to ignore newlines until "baseurl:"
  a commandline utility to add a template engine (Mustache) to AWS CloudFormation
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/node-cf" # the subpath of your site, e.g. /blog
+url: "https://my-ideas.github.io/node-cf" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  my-ideas
 
 # Build settings
