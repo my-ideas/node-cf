@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title:  "How to write a template"
 date:   2018-03-15 16:39:22 +0100
 categories: jekyll update

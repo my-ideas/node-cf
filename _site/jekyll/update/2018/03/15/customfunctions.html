@@ -1,4 +1,49 @@
-<p>The following functions can be used inside a template:</p>
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Custom functions | CFTPL</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Custom functions" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The following functions can be used inside a template: {{funcTime}}: returns the value of new Date().getTime() - @see simple-sns-function.yaml {{#jsonize}}a.key{{/jsonize}}: Return the json representation of the given key - @see test-simple-functions.json {{#jsonizeEscapeQuotes}}a.key{{/jsonizeEscapeQuotes}}: serialize object a.key in JSON and escape all the quotes (which means, convert the object in a string that you can include in other strings. @see /test/templates/test-api-gateway/stack-functions.tpl)" />
+<meta property="og:description" content="The following functions can be used inside a template: {{funcTime}}: returns the value of new Date().getTime() - @see simple-sns-function.yaml {{#jsonize}}a.key{{/jsonize}}: Return the json representation of the given key - @see test-simple-functions.json {{#jsonizeEscapeQuotes}}a.key{{/jsonizeEscapeQuotes}}: serialize object a.key in JSON and escape all the quotes (which means, convert the object in a string that you can include in other strings. @see /test/templates/test-api-gateway/stack-functions.tpl)" />
+<link rel="canonical" href="http://localhost:4000/jekyll/update/2018/03/15/customfunctions.html" />
+<meta property="og:url" content="http://localhost:4000/jekyll/update/2018/03/15/customfunctions.html" />
+<meta property="og:site_name" content="CFTPL" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-15T16:39:22+01:00" />
+<script type="application/ld+json">
+{"description":"The following functions can be used inside a template: {{funcTime}}: returns the value of new Date().getTime() - @see simple-sns-function.yaml {{#jsonize}}a.key{{/jsonize}}: Return the json representation of the given key - @see test-simple-functions.json {{#jsonizeEscapeQuotes}}a.key{{/jsonizeEscapeQuotes}}: serialize object a.key in JSON and escape all the quotes (which means, convert the object in a string that you can include in other strings. @see /test/templates/test-api-gateway/stack-functions.tpl)","@type":"BlogPosting","url":"http://localhost:4000/jekyll/update/2018/03/15/customfunctions.html","headline":"Custom functions","dateModified":"2018-03-15T16:39:22+01:00","datePublished":"2018-03-15T16:39:22+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2018/03/15/customfunctions.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>CFTPL</h1>
+        <p>a commandline utility to add a template engine (Mustache) to AWS CloudFormation</p>
+
+        
+          <p class="view"><a href="https://github.com/my-ideas/node-cf">View the Project on GitHub <small></small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <p>The following functions can be used inside a template:</p>
 <ul>
   <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">{funcTime</span><span class="p">}</span><span class="err">}</span></code>: returns the value of <code class="highlighter-rouge">new Date().getTime()</code> - @see <code class="highlighter-rouge">simple-sns-function.yaml</code></li>
   <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">{#jsonize</span><span class="p">}</span><span class="err">}a.key</span><span class="p">{</span><span class="err">{/jsonize</span><span class="p">}</span><span class="err">}</span></code>: Return the json representation of the given key - @see <code class="highlighter-rouge">test-simple-functions.json</code></li>
@@ -9,3 +54,19 @@
 <ul>
   <li>The name of the stack is in the template metadata</li>
 </ul>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/my-ideas">My Ideas</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+
+
+  
+  </body>
+</html>
