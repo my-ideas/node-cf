@@ -31,7 +31,7 @@ github:
   is_project_page: true
   owner_url: https://github.com/my-ideas
   owner_name: My Ideas
-  repository_url:https://github.com/my-ideas/node-cf
+  repository_url: https://github.com/my-ideas/node-cf
 
 version: 1.0.0
 
