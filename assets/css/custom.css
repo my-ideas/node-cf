@@ -1,0 +1,23 @@
+@media (min-width: 48em) {
+    .sidebar-sticky {
+        position: absolute;
+        right: 1rem;
+        left: 1rem;
+    }
+    .sticky-bottom {
+        bottom: 1rem;
+    }
+    .sticky-top {
+        top: 1rem;
+    }
+    .sidebar-about h1 {
+        color: #fff;
+        margin-top: 0;
+        font-size: 3.25rem;
+        font-family: "PT Sans", Helvetica, Arial, sans-serif;
+    }
+}
+
+.home > ul {
+    list-style: none;
+}

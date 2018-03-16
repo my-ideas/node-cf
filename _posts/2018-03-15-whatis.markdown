@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "What is CFTPL"
+date:   2018-03-15 17:07:22 +0100
+categories: jekyll update
+---
+`cftpl` is a commandline utility to add a template engine ([Mustache]) to [AWS CloudFormation]
+
+[Mustache]: https://mustache.github.io/
+[AWS CloudFormation]:   https://aws.amazon.com/it/cloudformation

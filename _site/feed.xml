@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<generator uri="http://jekyllrb.com" version="3.7.3">Jekyll</generator>
+<link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" />
+<link href="http://localhost:4000/" rel="alternate" type="text/html" />
+<updated>2018-03-16T11:56:10+01:00</updated>
+<id>http://localhost:4000/</id>
+<subtitle>a commandline utility to add a template engine (Mustache) to AWS CloudFormation</subtitle>
+<entry>
+<title>What is CFTPL</title>
+<link href="http://localhost:4000/jekyll/update/2018/03/15/whatis.html" rel="alternate" type="text/html" title="What is CFTPL" />
+<published>2018-03-15T17:07:22+01:00</published>
+<updated>2018-03-15T17:07:22+01:00</updated>
+<id>http://localhost:4000/jekyll/update/2018/03/15/whatis</id>
+<content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/15/whatis.html">&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cftpl&lt;/code&gt; is a commandline utility to add a template engine (&lt;a href=&quot;https://mustache.github.io/&quot;&gt;Mustache&lt;/a&gt;) to &lt;a href=&quot;https://aws.amazon.com/it/cloudformation&quot;&gt;AWS CloudFormation&lt;/a&gt;&lt;/p&gt;
+
+</content>
+<summary>cftpl is a commandline utility to add a template engine (Mustache) to AWS CloudFormation</summary>
+</entry>
+<entry>
+<title>Usage</title>
+<link href="http://localhost:4000/jekyll/update/2018/03/15/usage.html" rel="alternate" type="text/html" title="Usage" />
+<published>2018-03-15T16:39:22+01:00</published>
+<updated>2018-03-15T16:39:22+01:00</updated>
+<id>http://localhost:4000/jekyll/update/2018/03/15/usage</id>
+<content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/15/usage.html">&lt;ol&gt;
+  &lt;li&gt;Install: &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install -g cftpl&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Execution: &lt;code class=&quot;highlighter-rouge&quot;&gt;cftpl -h&lt;/code&gt; prints all the options, which are
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--create &amp;lt;path&amp;gt;&lt;/code&gt;: Create a CF stack using the template file at the specified path&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--update &amp;lt;path&amp;gt;&lt;/code&gt;: Update an existing CF stack using the template file at the specified path (the nme of the stack is speified in the template itself)&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--profile ,profile&amp;gt;&lt;/code&gt;: the &lt;a href=&quot;http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html&quot;&gt;AWS profile&lt;/a&gt; to use to call CloudFormation (this is the &lt;strong&gt;only&lt;/strong&gt; supported credential settings)&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--dry-run&lt;/code&gt;: if you specify this parameter, CloudFormation will not be called&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--stage &amp;lt;stage&amp;gt;&lt;/code&gt;: Add a variable &lt;code class=&quot;highlighter-rouge&quot;&gt;stages: [{name: &amp;lt;stage&amp;gt;}]&lt;/code&gt; to the template metadata - this is usefull to create separate stack with the same template (see the examples in &lt;code class=&quot;highlighter-rouge&quot;&gt;/test&lt;/code&gt;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+<summary>  Install: npm install -g cftpl  Execution: cftpl -h prints all the options, which are          --create &amp;lt;path&amp;gt;: Create a CF stack using the template file at the specified path      --update &amp;lt;path&amp;gt;: Update an existing CF stack using the template file at the specified path (the nme of the stack is speified in the template itself)      --profile ,profile&amp;gt;: the AWS profile to use to call CloudFormation (this is the only supported credential settings)      --dry-run: if you specify this parameter, CloudFormation will not be called      --stage &amp;lt;stage&amp;gt;: Add a variable stages: [{name: &amp;lt;stage&amp;gt;}] to the template metadata - this is usefull to create separate stack with the same template (see the examples in /test)      </summary>
+</entry>
+<entry>
+<title>How to write a template</title>
+<link href="http://localhost:4000/jekyll/update/2018/03/15/howtotemplate.1.html" rel="alternate" type="text/html" title="How to write a template" />
+<published>2018-03-15T16:39:22+01:00</published>
+<updated>2018-03-15T16:39:22+01:00</updated>
+<id>http://localhost:4000/jekyll/update/2018/03/15/howtotemplate.1</id>
+<content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/15/howtotemplate.1.html">&lt;p&gt;The templating engine is &lt;a href=&quot;https://mustache.github.io/&quot;&gt;Mustache&lt;/a&gt;, refer to Mustache’s user manual.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Check &lt;code class=&quot;highlighter-rouge&quot;&gt;test/templates/simple-sns.yaml&lt;/code&gt; for a fully documented how-to write a template&lt;/li&gt;
+  &lt;li&gt;Check &lt;code class=&quot;highlighter-rouge&quot;&gt;test/gtemplates/test-api-gateway/stack.tpl&lt;/code&gt; to see how to load external files in the template&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For large templates (over 5 mb) it is possible to upload the stack generated to S3 by adding the property &lt;code class=&quot;highlighter-rouge&quot;&gt;Metadata.aws.template.__use_s3=bucket&lt;/code&gt; . See &lt;code class=&quot;highlighter-rouge&quot;&gt;test/templates/simple-sns-s3-live.yaml&lt;/code&gt;&lt;/p&gt;
+</content>
+<summary>The templating engine is Mustache, refer to Mustache’s user manual.</summary>
+</entry>
+<entry>
+<title>Custom functions</title>
+<link href="http://localhost:4000/jekyll/update/2018/03/15/customfunctions.html" rel="alternate" type="text/html" title="Custom functions" />
+<published>2018-03-15T16:39:22+01:00</published>
+<updated>2018-03-15T16:39:22+01:00</updated>
+<id>http://localhost:4000/jekyll/update/2018/03/15/customfunctions</id>
+<content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/15/customfunctions.html">&lt;p&gt;The following functions can be used inside a template:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{funcTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endraw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;: returns the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;new Date().getTime()&lt;/code&gt; - @see &lt;code class=&quot;highlighter-rouge&quot;&gt;simple-sns-function.yaml&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{#jsonize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}a.key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{/jsonize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endraw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;: Return the json representation of the given key - @see &lt;code class=&quot;highlighter-rouge&quot;&gt;test-simple-functions.json&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{#jsonizeEscapeQuotes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}a.key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{/jsonizeEscapeQuotes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;endraw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;: serialize object &lt;code class=&quot;highlighter-rouge&quot;&gt;a.key&lt;/code&gt; in JSON and escape all the quotes (which means, convert the object in a string that you can include in other strings. @see &lt;code class=&quot;highlighter-rouge&quot;&gt;/test/templates/test-api-gateway/stack-functions.tpl&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The name of the stack is in the template metadata&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+<summary>The following functions can be used inside a template:  {{funcTime}}: returns the value of new Date().getTime() - @see simple-sns-function.yaml  {{#jsonize}}a.key{{/jsonize}}: Return the json representation of the given key - @see test-simple-functions.json  {{#jsonizeEscapeQuotes}}a.key{{/jsonizeEscapeQuotes}}: serialize object a.key in JSON and escape all the quotes (which means, convert the object in a string that you can include in other strings. @see /test/templates/test-api-gateway/stack-functions.tpl)</summary>
+</entry>
+</feed>

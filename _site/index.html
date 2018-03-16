@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  
+    <title>
+      
+         &middot; CFTPL
+      
+    </title>
+  
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/poole.css">
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/hyde.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+  
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="CFTPL" href="/feed.xml">
+  </head>
+  
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky sticky-top">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          CFTPL
+        </a>
+      </h1>
+      <p class="lead">a commandline utility to add a template engine (Mustache) to AWS CloudFormation</p>
+    </div>
+  </div>
+
+  <div class="container sidebar-sticky sticky-bottom">
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+      
+        
+      
+      <a class="sidebar-nav-item" href="https://github.com/my-ideas/node-cf">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v1.0.0</span>
+    </nav>
+
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="home">
+<ul class="post-list"><li>
+        <h2>
+            What is CFTPL
+        </h2><p><code class="highlighter-rouge">cftpl</code> is a commandline utility to add a template engine (<a href="https://mustache.github.io/">Mustache</a>) to <a href="https://aws.amazon.com/it/cloudformation">AWS CloudFormation</a></p>
+
+</li><li>
+        <h2>
+            Usage
+        </h2><ol>
+  <li>Install: <code class="highlighter-rouge">npm install -g cftpl</code></li>
+  <li>Execution: <code class="highlighter-rouge">cftpl -h</code> prints all the options, which are
+    <ul>
+      <li><code class="highlighter-rouge">--create &lt;path&gt;</code>: Create a CF stack using the template file at the specified path</li>
+      <li><code class="highlighter-rouge">--update &lt;path&gt;</code>: Update an existing CF stack using the template file at the specified path (the nme of the stack is speified in the template itself)</li>
+      <li><code class="highlighter-rouge">--profile ,profile&gt;</code>: the <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html">AWS profile</a> to use to call CloudFormation (this is the <strong>only</strong> supported credential settings)</li>
+      <li><code class="highlighter-rouge">--dry-run</code>: if you specify this parameter, CloudFormation will not be called</li>
+      <li><code class="highlighter-rouge">--stage &lt;stage&gt;</code>: Add a variable <code class="highlighter-rouge">stages: [{name: &lt;stage&gt;}]</code> to the template metadata - this is usefull to create separate stack with the same template (see the examples in <code class="highlighter-rouge">/test</code>)</li>
+    </ul>
+  </li>
+</ol>
+</li><li>
+        <h2>
+            How to write a template
+        </h2><p>The templating engine is <a href="https://mustache.github.io/">Mustache</a>, refer to Mustache’s user manual.</p>
+
+<ul>
+  <li>Check <code class="highlighter-rouge">test/templates/simple-sns.yaml</code> for a fully documented how-to write a template</li>
+  <li>Check <code class="highlighter-rouge">test/gtemplates/test-api-gateway/stack.tpl</code> to see how to load external files in the template</li>
+</ul>
+
+<p>For large templates (over 5 mb) it is possible to upload the stack generated to S3 by adding the property <code class="highlighter-rouge">Metadata.aws.template.__use_s3=bucket</code> . See <code class="highlighter-rouge">test/templates/simple-sns-s3-live.yaml</code></p>
+</li><li>
+        <h2>
+            Custom functions
+        </h2><p>The following functions can be used inside a template:</p>
+<ul>
+  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">{funcTime</span><span class="p">}</span><span class="err">}</span></code>: returns the value of <code class="highlighter-rouge">new Date().getTime()</code> - @see <code class="highlighter-rouge">simple-sns-function.yaml</code></li>
+  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">{#jsonize</span><span class="p">}</span><span class="err">}a.key</span><span class="p">{</span><span class="err">{/jsonize</span><span class="p">}</span><span class="err">}</span></code>: Return the json representation of the given key - @see <code class="highlighter-rouge">test-simple-functions.json</code></li>
+  <li><code class="highlighter-rouge"><span class="p">{</span><span class="err">{#jsonizeEscapeQuotes</span><span class="p">}</span><span class="err">}a.key</span><span class="p">{</span><span class="err">{/jsonizeEscapeQuotes</span><span class="p">}</span><span class="err">}</span></code>: serialize object <code class="highlighter-rouge">a.key</code> in JSON and escape all the quotes (which means, convert the object in a string that you can include in other strings. @see <code class="highlighter-rouge">/test/templates/test-api-gateway/stack-functions.tpl</code>)</li>
+</ul>
+
+<p>Notes:</p>
+<ul>
+  <li>The name of the stack is in the template metadata</li>
+</ul>
+</li></ul></div>
+
+    </div>
+
+  </body>
+</html>

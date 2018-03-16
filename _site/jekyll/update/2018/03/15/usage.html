@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  
+    <title>
+      
+        Usage &middot; CFTPL
+      
+    </title>
+  
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/poole.css">
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/hyde.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+  
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="CFTPL" href="/feed.xml">
+  </head>
+  
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky sticky-top">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          CFTPL
+        </a>
+      </h1>
+      <p class="lead">a commandline utility to add a template engine (Mustache) to AWS CloudFormation</p>
+    </div>
+  </div>
+
+  <div class="container sidebar-sticky sticky-bottom">
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+      
+        
+      
+      <a class="sidebar-nav-item" href="https://github.com/my-ideas/node-cf">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v1.0.0</span>
+    </nav>
+
+    <p>&copy; 2018. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Usage</h1>
+  <span class="post-date">15 Mar 2018</span>
+  <ol>
+  <li>Install: <code class="highlighter-rouge">npm install -g cftpl</code></li>
+  <li>Execution: <code class="highlighter-rouge">cftpl -h</code> prints all the options, which are
+    <ul>
+      <li><code class="highlighter-rouge">--create &lt;path&gt;</code>: Create a CF stack using the template file at the specified path</li>
+      <li><code class="highlighter-rouge">--update &lt;path&gt;</code>: Update an existing CF stack using the template file at the specified path (the nme of the stack is speified in the template itself)</li>
+      <li><code class="highlighter-rouge">--profile ,profile&gt;</code>: the <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html">AWS profile</a> to use to call CloudFormation (this is the <strong>only</strong> supported credential settings)</li>
+      <li><code class="highlighter-rouge">--dry-run</code>: if you specify this parameter, CloudFormation will not be called</li>
+      <li><code class="highlighter-rouge">--stage &lt;stage&gt;</code>: Add a variable <code class="highlighter-rouge">stages: [{name: &lt;stage&gt;}]</code> to the template metadata - this is usefull to create separate stack with the same template (see the examples in <code class="highlighter-rouge">/test</code>)</li>
+    </ul>
+  </li>
+</ol>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/jekyll/update/2018/03/15/whatis.html">
+            What is CFTPL
+            <small>15 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/jekyll/update/2018/03/15/howtotemplate.1.html">
+            How to write a template
+            <small>15 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/jekyll/update/2018/03/15/customfunctions.html">
+            Custom functions
+            <small>15 Mar 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+
+  </body>
+</html>
