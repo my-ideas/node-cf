@@ -23,11 +23,16 @@ github_username:  my-ideas
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-hyde
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 show_excerpts: true
-github_repo: https://github.com/my-ideas/node-cf
+github:
+  is_project_page: true
+  owner_url: https://github.com/my-ideas
+  owner_name: My Ideas
+  repository_url:https://github.com/my-ideas/node-cf
+
 version: 1.0.0
 
 # Exclude from processing.
